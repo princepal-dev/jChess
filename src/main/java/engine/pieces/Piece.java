@@ -3,21 +3,20 @@ package engine.pieces;
 import engine.Alliance;
 import engine.board.Board;
 import engine.board.Move;
-
-import java.util.List;
+import java.util.Collection;
 
 public abstract class Piece {
-    protected final int piecePosition;
-    protected final Alliance pieceAlliance;
+  protected final int piecePosition;
+  protected final Alliance pieceAlliance;
 
-    Piece(final int piecePosition, final Alliance pieceAlliance) {
-        this.piecePosition = piecePosition;
-        this.pieceAlliance = pieceAlliance;
-    }
+  Piece(final int piecePosition, final Alliance pieceAlliance) {
+    this.piecePosition = piecePosition;
+    this.pieceAlliance = pieceAlliance;
+  }
 
-    public Alliance getPieceAlliance() {
-        return pieceAlliance;
-    }
+  public Alliance getPieceAlliance() {
+    return pieceAlliance;
+  }
 
-    public abstract List<Move> calculateLegalMoves(final Board board);
+  public abstract Collection<Move> calculateLegalMoves(final Board board);
 }
